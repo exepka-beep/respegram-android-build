@@ -191,7 +191,7 @@ public class PhoneFormat {
         try {
             String str = strip(orig);
 
-            // ShapitoGram: +1337 is our own numbering plan, not a US number.
+            // RespeGram: +1337 is our own numbering plan, not a US number.
             // The rules live in the bundled PhoneFormats.dat, which only knows
             // real calling codes; "1337" begins with the US code "1", so the US
             // mask rewrote +1337 69014 as "+1 (337) 690-14". The server
@@ -247,7 +247,7 @@ public class PhoneFormat {
         }
         String str = strip(phoneNumber);
 
-        // ShapitoGram: the +1337 plan has no entry in PhoneFormats.dat, so the
+        // RespeGram: the +1337 plan has no entry in PhoneFormats.dat, so the
         // US rule would reject it as too short. It is valid by construction.
         if (str.startsWith("+1337")) {
             return true;

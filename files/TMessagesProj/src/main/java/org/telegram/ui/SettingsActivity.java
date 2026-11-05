@@ -716,7 +716,7 @@ public class SettingsActivity extends BaseFragment implements NotificationCenter
         items.add(UItem.asShadow(null));
 
         // Only show the Premium section (Premium/Stars/TON/Business/Gift) for servers
-        // that implement these features (Telegram). ShapitoGram and custom
+        // that implement these features (Telegram). RespeGram and custom
         // single-servers don't, so hide the whole block there.
         boolean serverPremium = org.telegram.owpengram.OwpengramServers.serverSupportsPremium(currentAccount);
         if (serverPremium && !getMessagesController().premiumFeaturesBlocked()) {
@@ -759,7 +759,7 @@ public class SettingsActivity extends BaseFragment implements NotificationCenter
         items.add(UItem.asHeader(getString(R.string.SettingsHelp)));
         // Ask a Question / Telegram FAQ / Telegram Features / Privacy Policy are
         // Telegram-specific. Show them only when the active account is on the
-        // official Telegram network; hide them on ShapitoGram and other servers.
+        // official Telegram network; hide them on RespeGram and other servers.
         boolean officialTelegram = org.telegram.owpengram.OwpengramServers.serverIsOfficialTelegram(currentAccount);
         if (officialTelegram) {
             items.add(SettingCell.Factory.of(17, 0xFFF09F1B, 0xFFE18A11, R.drawable.settings_ask, getString(R.string.AskAQuestion)));
@@ -964,9 +964,8 @@ public class SettingsActivity extends BaseFragment implements NotificationCenter
             }
             String versionName = pInfo.versionName;
             //APP VERSION HERE
-            versionName += "_SG";
 
-            return "ShapitoGram " + String.format(Locale.US, "v%s (%d)\n%s", versionName, code, abi);
+            return "RespeGram " + String.format(Locale.US, "v%s (%d)\n%s", versionName, code, abi);
         } catch (Exception e) {
             FileLog.e(e);
         }

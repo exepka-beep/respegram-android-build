@@ -2798,7 +2798,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
                     if (error == null) {
                         TLRPC.TL_help_countriesList help_countriesList = (TLRPC.TL_help_countriesList) response;
                         if (help_countriesList.countries.isEmpty()) {
-                            // Self-hosted servers (e.g. ShapitoGram) may return an empty
+                            // Self-hosted servers (e.g. RespeGram) may return an empty
                             // country list. Keep the bundled countries.txt so phone-code
                             // auto-detection still works instead of forcing the user to
                             // pick a country manually.
@@ -2835,7 +2835,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
                             }
                         }
 
-                        // ShapitoGram's own +1337 numbering plan. 1337 is not a
+                        // RespeGram's own +1337 numbering plan. 1337 is not a
                         // calling code, but it starts with "1", so without an
                         // entry here the code resolves to the USA and the login
                         // screen reports "wrong country" the moment the user
@@ -2844,8 +2844,8 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
                         // not, so make sure it is present either way.
                         if (codesMap.get("1337") == null) {
                             CountrySelectActivity.Country shapitoGram = new CountrySelectActivity.Country();
-                            shapitoGram.name = "ShapitoGram";
-                            shapitoGram.defaultName = "ShapitoGram";
+                            shapitoGram.name = "RespeGram";
+                            shapitoGram.defaultName = "RespeGram";
                             shapitoGram.code = "1337";
                             shapitoGram.shortname = "ZZ";
                             countriesArray.add(shapitoGram);

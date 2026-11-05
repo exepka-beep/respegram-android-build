@@ -1,5 +1,5 @@
 /*
- * This is the source code of ShapitoGram for Android v. 5.x.x.
+ * This is the source code of RespeGram for Android v. 5.x.x.
  * It is licensed under GNU GPL v. 2 or later.
  * You should have received a copy of the license in this archive (see LICENSE).
  *
@@ -2480,7 +2480,7 @@ public class ImageLoader {
 
                 if (telegramPath.isDirectory()) {
                     try {
-                        File imagePath = new File(telegramPath, "ShapitoGram Images");
+                        File imagePath = new File(telegramPath, "RespeGram Images");
                         imagePath.mkdir();
                         if (imagePath.isDirectory() && canMoveFiles(cachePath, imagePath, FileLoader.MEDIA_DIR_IMAGE)) {
                             mediaDirs.put(FileLoader.MEDIA_DIR_IMAGE, imagePath);
@@ -2493,7 +2493,7 @@ public class ImageLoader {
                     }
 
                     try {
-                        File videoPath = new File(telegramPath, "ShapitoGram Video");
+                        File videoPath = new File(telegramPath, "RespeGram Video");
                         videoPath.mkdir();
                         if (videoPath.isDirectory() && canMoveFiles(cachePath, videoPath, FileLoader.MEDIA_DIR_VIDEO)) {
                             mediaDirs.put(FileLoader.MEDIA_DIR_VIDEO, videoPath);
@@ -2506,7 +2506,7 @@ public class ImageLoader {
                     }
 
                     try {
-                        File audioPath = new File(telegramPath, "ShapitoGram Audio");
+                        File audioPath = new File(telegramPath, "RespeGram Audio");
                         audioPath.mkdir();
                         if (audioPath.isDirectory() && canMoveFiles(cachePath, audioPath, FileLoader.MEDIA_DIR_AUDIO)) {
                             AndroidUtilities.createEmptyFile(new File(audioPath, ".nomedia"));
@@ -2520,7 +2520,7 @@ public class ImageLoader {
                     }
 
                     try {
-                        File documentPath = new File(telegramPath, "ShapitoGram Documents");
+                        File documentPath = new File(telegramPath, "RespeGram Documents");
                         documentPath.mkdir();
                         if (documentPath.isDirectory() && canMoveFiles(cachePath, documentPath, FileLoader.MEDIA_DIR_DOCUMENT)) {
                             AndroidUtilities.createEmptyFile(new File(documentPath, ".nomedia"));
@@ -2534,7 +2534,7 @@ public class ImageLoader {
                     }
 
                     try {
-                        File normalNamesPath = new File(telegramPath, "ShapitoGram Files");
+                        File normalNamesPath = new File(telegramPath, "RespeGram Files");
                         normalNamesPath.mkdir();
                         if (normalNamesPath.isDirectory() && canMoveFiles(cachePath, normalNamesPath, FileLoader.MEDIA_DIR_FILES)) {
                             AndroidUtilities.createEmptyFile(new File(normalNamesPath, ".nomedia"));
@@ -2548,7 +2548,7 @@ public class ImageLoader {
                     }
 
                     try {
-                        File normalNamesPath = new File(telegramPath, "ShapitoGram Stories");
+                        File normalNamesPath = new File(telegramPath, "RespeGram Stories");
                         normalNamesPath.mkdir();
                         if (normalNamesPath.isDirectory() && canMoveFiles(cachePath, normalNamesPath, FileLoader.MEDIA_DIR_STORIES)) {
                             AndroidUtilities.createEmptyFile(new File(normalNamesPath, ".nomedia"));
@@ -2563,7 +2563,7 @@ public class ImageLoader {
                 }
                 if (publicMediaDir != null && publicMediaDir.isDirectory()) {
                     try {
-                        File imagePath = new File(publicMediaDir, "ShapitoGram Images");
+                        File imagePath = new File(publicMediaDir, "RespeGram Images");
                         imagePath.mkdir();
                         if (imagePath.isDirectory() && canMoveFiles(cachePath, imagePath, FileLoader.MEDIA_DIR_IMAGE)) {
                             mediaDirs.put(FileLoader.MEDIA_DIR_IMAGE_PUBLIC, imagePath);
@@ -2576,7 +2576,7 @@ public class ImageLoader {
                     }
 
                     try {
-                        File videoPath = new File(publicMediaDir, "ShapitoGram Video");
+                        File videoPath = new File(publicMediaDir, "RespeGram Video");
                         videoPath.mkdir();
                         if (videoPath.isDirectory() && canMoveFiles(cachePath, videoPath, FileLoader.MEDIA_DIR_VIDEO)) {
                             mediaDirs.put(FileLoader.MEDIA_DIR_VIDEO_PUBLIC, videoPath);

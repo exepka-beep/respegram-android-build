@@ -70,12 +70,12 @@ jobs:
 
       # Версия. Совпадает с XTree Gram намеренно: это тот же код, и различать
       # сборки по номеру версии смысла нет — их различает applicationId.
-      APP_VERSION_CODE: "7043"
+      APP_VERSION_CODE: "7044"
       APP_VERSION_NAME: "12.10.1"
       APP_PACKAGE: com.respegram.messenger
       APP_LABEL: RespeGram
       # versionCode afat = APP_VERSION_CODE * 10 + 9 (см. TMessagesProj_App/build.gradle).
-      EXPECTED_VERSION_CODE: "70439"
+      EXPECTED_VERSION_CODE: "70449"
 
       # Отпечаток сертификата ключа подписи RespeGram. Если APK подписан не им,
       # обновление поверх установленного приложения не встанет — лучше упасть здесь.
