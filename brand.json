@@ -1,0 +1,83 @@
+{
+  "_comment": "Единый конфиг бренда RespeGram. Все скрипты ребрендинга читают этот файл.",
+
+  "product": {
+    "name": "RespeGram",
+    "short_name": "RespeGram",
+    "username_prefix": "respegram",
+    "app_scheme": "respegram",
+    "premium_name": "RespeGram Premium",
+    "stars_name": "RespeGram Stars",
+    "org_name": "RespeGram"
+  },
+
+  "replace": {
+    "_comment": "Правила замены строк в текстовых ресурсах клиентов. Порядок важен: длинные раньше коротких.",
+    "_android_overlay": "Android-конвейер накладывает overlay XTree Gram, поэтому в текстовых ресурсах уже стоит 'Xtreegram' вместо 'Telegram'. Поэтому правил две группы: сначала снимаем следы XTree Gram, потом добираем то, что XTree Gram сам не тронул. В Java применяется только группа XTree Gram — правило 'Telegram' там опасно (идентификаторы, t.me-ссылки, telegram.org).",
+    "rules": [
+      { "from": "XTree Gram", "to": "RespeGram", "skip_after": [], "skip_before": [] },
+      { "from": "Xtreegram", "to": "RespeGram", "skip_after": [], "skip_before": [] },
+      { "from": "XTREEGRAM", "to": "RESPEGRAM", "skip_after": [], "skip_before": [] },
+      { "from": "Telegram", "to": "RespeGram", "skip_after": [".org", ".ORG"], "skip_before": ["/"] },
+      { "from": "TELEGRAM", "to": "RESPEGRAM", "skip_after": [".ORG"], "skip_before": ["/"] }
+    ]
+  },
+
+  "android": {
+    "_keystore_password_comment": "Пароля здесь НЕТ намеренно. Этот файл уезжает в публичный репозиторий сборки, а пароль ключа подписи — секрет. Он приходит на шаге ребрендинга: --keystore-password, переменная окружения ANDROID_KEYSTORE_PASSWORD или секрет GitHub ANDROID_KEYSTORE_PASSWORD.",
+    "app_name": "RespeGram",
+    "app_name_beta": "RespeGram Beta",
+    "package": "com.respegram.messenger",
+    "namespace": "org.telegram.messenger.regular",
+    "flavor": "afat",
+    "keystore_file": "release.keystore",
+    "keystore_alias": "xtreegramkey",
+    "keystore_type": "PKCS12",
+    "keystore_keyalg": "RSA",
+    "keystore_keysize": 4096,
+    "keystore_validity_days": 10950,
+    "keystore_cert_sha256": "B4:B1:04:63:7C:6C:1B:C3:BE:46:52:39:DA:25:E7:BB:B3:5D:72:5D:E9:28:EA:C9:7E:F0:A2:4F:E6:08:C9:1E"
+  },
+
+  "ios": {
+    "app_name": "RespeGram",
+    "bundle_id": "com.respegram.messenger"
+  },
+
+  "desktop": {
+    "app_name": "RespeGram Desktop",
+    "short_app_name": "RespeGram",
+    "application_name": "RespeGramDesktop",
+    "company_name": "RespeGram",
+    "bundle_id": "com.respegram.desktop",
+    "linux_app_id": "com.respegram.desktop"
+  },
+
+  "pc_client": {
+    "distribution": "prebuilt",
+    "source_releases": "https://github.com/owpengram/owpengram-desktop-client/releases",
+    "exe_name": "RespeGram.exe",
+    "server_name": "RespeGram",
+    "server_description": "Self-hosted RespeGram server.",
+    "server_icon_env": "TELESRV_OWPENGRAM_SERVER_ICON"
+  },
+
+  "server": {
+    "domain": "respegram-official.duckdns.org",
+    "base_url": "https://respegram-official.duckdns.org",
+    "web_base_url": "https://respegram-official.duckdns.org",
+    "advertise_ip": "31.76.79.20",
+    "public_listen_host": "127.0.0.1",
+    "server_port": 2398,
+    "dc_id": 2,
+    "default_country_code": "RU",
+    "websocket_allowed_origins": "https://respegram-official.duckdns.org",
+    "image_prefix": "ghcr.io/iamxvbaba/gramsrv",
+    "image_tag": "main"
+  },
+
+  "telegram_bot": {
+    "username": "PLACEHOLDER_BOT_USERNAME",
+    "token": "PLACEHOLDER_BOT_TOKEN"
+  }
+}
